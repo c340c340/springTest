@@ -1,0 +1,3 @@
+ <bean name="test"  class="springTest/Main">
+                 <p>123</p>
+        </bean>
