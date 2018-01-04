@@ -36,11 +36,7 @@ import com.trans.type.ErrorCode;
  */
 public class YouDaoTranUtil {
 	
-	public static String autoTran(String src,String from , String to,OutPutType type){
-		
-		return null;
-	}
-	
+
 	
 	public static  ResultBean autoTran(String src,String from , String to){
 		//分割单词
@@ -63,7 +59,8 @@ public class YouDaoTranUtil {
 	 */
 	private static List<String> separatedWord(String src){		
 	     List<String> words = new ArrayList<String>();
-         Scanner s = new Scanner(src).useDelimiter(" |,|\\?|\\.");
+	     //匹配",", "?", "!", """, ":", "(", ")", "-"
+         Scanner s = new Scanner(src).useDelimiter(" |,|\\?|\\.|!|:|\"|-|\\(|\\)");
          while(s.hasNext()){
         	 String word = s.next();
 //             System.out.println(word);

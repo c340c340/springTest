@@ -32,38 +32,38 @@ import com.trans.bean.ResultBean;
  */
 public class TransTest {
 	 public static void main(String[] args) throws Exception {
-	        String appKey =ReadConfig.getValue("appKey");
-	        String src = "smartphones";
-	        String query = new String(src.getBytes(),Charset.forName("UTF-8"));
-	        String salt = String.valueOf(System.currentTimeMillis());
-	        String from = "dd";
-	        String to = "rr";
-	        String sign = md5(appKey + query + salt+ ReadConfig.getValue("key"));
-	        Map params = new HashMap();
-	        params.put("q", query);
-	        params.put("from", from);
-	        params.put("to", to);
-	        params.put("sign", sign);
-	        params.put("salt", salt);
-	        params.put("appKey", appKey);
-	        System.out.println(requestForHttp("http://openapi.youdao.com/api", params));
-//		 String src = "People are using their smartphones for shopping and riding shared bikes. And searches for wallets on e-commerce platforms are declining for the first time, statistics show. Last year, a total of 10.46 million Shanghai Alipay users adopted Ant Forest, an environmental initiative meant to encourage Alipay users to keep track of their low-carbon activities.";
-//		
-//		 long startTime = System.currentTimeMillis(); 
-//		 
-//		 ResultBean result =  YouDaoTranUtil.autoTran(src, "EN", "EN");
-//		 
-//		 long endTime = System.currentTimeMillis();  
-//		 
-//		 System.out.println("程序运行时间：" + (endTime - startTime) + "ms"); 
-//		 
-//		 System.out.println(src);
-//		 System.out.println("英式音标");
-////		 System.out.println(result.getUkphonetic());
-//		 System.out.println(result.toWordAndUK());
-//		 System.out.println("美式音标");
-////		 System.out.println(result.getUsphonetic());
-//		 System.out.println(result.toWordAndUS());
+//	        String appKey =ReadConfig.getValue("appKey");
+//	        String src = "nice!";
+//	        String query = new String(src.getBytes(),Charset.forName("UTF-8"));
+//	        String salt = String.valueOf(System.currentTimeMillis());
+//	        String from = "dd";
+//	        String to = "rr";
+//	        String sign = md5(appKey + query + salt+ ReadConfig.getValue("key"));
+//	        Map params = new HashMap();
+//	        params.put("q", query);
+//	        params.put("from", from);
+//	        params.put("to", to);
+//	        params.put("sign", sign);
+//	        params.put("salt", salt);
+//	        params.put("appKey", appKey);
+//	        System.out.println(requestForHttp("http://openapi.youdao.com/api", params));
+		 String src = "\"People\" we-two (are too) area";
+		
+		 long startTime = System.currentTimeMillis(); 
+		 
+		 ResultBean result =  YouDaoTranUtil.autoTran(src, "EN", "EN");
+		 
+		 long endTime = System.currentTimeMillis();  
+		 
+		 System.out.println("程序运行时间：" + (endTime - startTime) + "ms"); 
+		 
+		 System.out.println(src);
+		 System.out.println("英式音标");
+//		 System.out.println(result.getUkphonetic());
+		 System.out.println(result.toWordAndUK());
+		 System.out.println("美式音标");
+//		 System.out.println(result.getUsphonetic());
+		 System.out.println(result.toWordAndUS());
 	    }
 
 	    public static String requestForHttp(String url,Map requestParams) throws Exception{
